@@ -2,9 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Engine;
     using Microsoft.FSharp.Collections;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FSSC = Microsoft.FSharp.Collections.FSharpSet<char>;
 
     [TestClass]
     public class CombinationTests
@@ -14,17 +14,16 @@
         {
             var result = Functions.Calculate(ListModule.OfSeq(new[] { 'A', 'B', 'C' })).ToList();
 
-            var expectedCombinations = new List<FSharpSet<char>>
+            var expectedCombinations = new List<FSSC>
                                        {
-                                           new FSharpSet<char>(new[] { 'A' }),
-                                           new FSharpSet<char>(new[] { 'B' }),
-                                           new FSharpSet<char>(new[] { 'C' }),
-                                           new FSharpSet<char>(new[] { 'A', 'B' }),
-                                           new FSharpSet<char>(new[] { 'A', 'C' }),
-                                           new FSharpSet<char>(new[] { 'B', 'C' }),
-                                           new FSharpSet<char>(new[] { 'A', 'B', 'C' }),
-                                       }
-                ;
+                                           new FSSC(new[] { 'A' }),
+                                           new FSSC(new[] { 'B' }),
+                                           new FSSC(new[] { 'C' }),
+                                           new FSSC(new[] { 'A', 'B' }),
+                                           new FSSC(new[] { 'A', 'C' }),
+                                           new FSSC(new[] { 'B', 'C' }),
+                                           new FSSC(new[] { 'A', 'B', 'C' }),
+                                       };
 
             Assert.AreEqual(result.Count, expectedCombinations.Count);
 

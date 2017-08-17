@@ -3,12 +3,12 @@
 let Calculate columns = 
     let rec CalculateCombinations columns = 
         match columns with
-        | h::[] -> [ [ h ] ]
-        | h::t -> 
+        | h :: [] -> [ [ h ] ]
+        | h :: t -> 
             let x = CalculateCombinations t
-            List.fold (fun acc elem -> (h::elem)::acc) ([h]::x) x
-        | [] -> []
+            List.fold (fun acc elem -> (h :: elem) :: acc) ([ h ] :: x) x
 
-    columns 
+        | [] -> []
+    columns
     |> CalculateCombinations
-    |> List.map set 
+    |> List.map set
