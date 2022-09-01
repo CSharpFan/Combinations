@@ -1,4 +1,4 @@
-﻿namespace Engine.Tests
+namespace Engine.Tests
 {
     using System.Collections.Generic;
     using System.Linq;
