@@ -53,7 +53,7 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@c0d4ad69d8bd405d234f1c9166d383b7a4f69ed8 # tag=v2.1.0
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 6.0.x
       - name: Install dependencies
         run: dotnet restore
       - name: Build
